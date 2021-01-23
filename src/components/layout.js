@@ -3,7 +3,7 @@ import layoutStyles from "./layout.module.css"
 import { useStaticQuery, Link, graphql } from "gatsby"
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+  <li style={{ display: `inline-block`, marginRight: `1rem`, marginLeft: 0}}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
@@ -26,7 +26,7 @@ export default function Layout({ children }) {
         <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
           <h3>{data.site.siteMetadata.title}</h3>
         </Link>
-        <ul>
+        <ul style={{marginLeft: `0rem`}}>
           <ListLink to="/">Home</ListLink>
           <ListLink to="/about/">About</ListLink>
           <ListLink to="/contact/">Contact</ListLink>
